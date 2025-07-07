@@ -1,0 +1,29 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Configurar o WebDriver do Chrome (substitua pelo caminho correto)
+driver = webdriver.Chrome()  # Se necessário, informe o caminho do ChromeDriver
+
+# Abrir o site do ERP
+driver.get("https://erp.sebratel.net.br/users/login")
+time.sleep(3)
+
+# Preencher o login
+driver.find_element(By.NAME, "login").send_keys(LOGIN VOALLE)
+time.sleep(1)
+
+# Preencher a senha
+driver.find_element(By.NAME, "password").send_keys("SENHA VOALLE")
+time.sleep(1)
+
+# Pressionar Enter para logar
+driver.find_element(By.NAME, "password").send_keys(Keys.RETURN)
+time.sleep(5)  # Espera o login completar
+
+# Navegar até a dashboard
+driver.get("https://erp.sebratel.net.br/service_dashboard#list/team")
+time.sleep(3)
+
+print("Login realizado com sucesso!")
